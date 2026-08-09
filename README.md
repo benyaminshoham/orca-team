@@ -3,7 +3,7 @@
 ![Robotic orcas leaping above an ocean, with abstract AI infrastructure in the background](assets/orca-ai-hero-v3.png)
 
 Orca Team packages a practical workflow for designing portable agent teams and
-binding them to concrete projects in Codex. It includes two installable skills, a
+binding them to concrete projects in Codex and Claude Code. It includes two installable skills, a
 runtime-neutral knowledge-pack template, starter-pack proposals, and simple
 installers for macOS/Linux and Windows.
 
@@ -16,6 +16,8 @@ installers for macOS/Linux and Windows.
   project documents, creates a project brief and execution plan, and coordinates
   work through visible Codex tasks, isolated Git worktrees, and an approved
   connected task-management system.
+- `run-agent-team-on-claude-code`: the Claude Code equivalent, using isolated
+  Claude Code agents or worktree sessions and the same approved task system.
 - Five ready-to-bind universal starter packs for SaaS, marketing websites,
   data/ML products, mobile applications, and research reports.
 - `packs/template`: a copyable, runtime-neutral starting structure for new packs.
@@ -70,6 +72,18 @@ Custom destination examples:
 
 Restart Codex after installation so it reloads the skills.
 
+### Claude Code
+
+Install the Claude Code runner into your user skills directory:
+
+```sh
+mkdir -p ~/.claude/skills
+cp -R skills/run-agent-team-on-claude-code ~/.claude/skills/
+```
+
+Restart Claude Code, then invoke `$run-agent-team-on-claude-code` with the
+pack and project documents. The Codex installer remains Codex-only.
+
 ## Use
 
 ### 1. Build a universal pack
@@ -115,7 +129,8 @@ flow and [docs/pack-catalog.md](docs/pack-catalog.md) for starter-pack ideas.
 orca-team/
 ├── skills/
 │   ├── build-agent-team/
-│   └── run-agent-team-on-codex/
+│   ├── run-agent-team-on-codex/
+│   └── run-agent-team-on-claude-code/
 ├── packs/
 │   ├── saas-mvp-delivery/
 │   ├── marketing-website-launch/
@@ -137,7 +152,8 @@ orca-team/
 - Concrete project facts live in the approved runtime project brief, not the pack.
 - Copied or adapted sources require compatible licensing and provenance.
 - Team execution requires a human-approved plan and connected task system.
-- Role agents work in visible Codex tasks and isolated Git worktrees.
+- Role agents work in visible Codex or Claude Code agent tasks and isolated Git
+  worktrees.
 - External actions require explicit authorization.
 - Knowledge packs stay read-only during execution.
 
