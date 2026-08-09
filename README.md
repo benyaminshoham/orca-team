@@ -2,10 +2,32 @@
 
 ![Robotic orcas leaping above an ocean, with abstract AI infrastructure in the background](assets/orca-ai-hero-v3.png)
 
-Orca Team packages a practical workflow for designing portable agent teams and
-binding them to concrete projects in Codex and Claude Code. It includes two installable skills, a
-runtime-neutral knowledge-pack template, starter-pack proposals, and simple
-installers for macOS/Linux and Windows.
+Build and run reliable AI agent teams in Codex and Claude Code. Orca Team provides installable
+skills and reusable team packs for planning and delivering SaaS products,
+marketing websites, data and ML products, mobile apps, and research reports.
+
+It is for teams that want agent work to stay reviewable: a human approves the
+plan, specialist roles have explicit authority, and work is coordinated through
+visible platform-native agent tasks and isolated Git worktrees.
+
+## Try it in 30 seconds
+
+```sh
+git clone https://github.com/benyaminshoham/orca-team.git
+cd orca-team
+./scripts/install.sh
+```
+
+Restart Codex, open the project you want to deliver, then ask:
+
+```text
+Use $run-agent-team-on-codex to bind the SaaS MVP delivery pack from Orca Team
+to this project and execute it using the project documents.
+```
+
+The skill first proposes a project brief and execution plan for your approval;
+it does not start a team or take external actions without it. See a worked
+[first-project example](docs/first-project-example.md).
 
 ## Included
 
@@ -84,7 +106,63 @@ cp -R skills/run-agent-team-on-claude-code ~/.claude/skills/
 Restart Claude Code, then invoke `$run-agent-team-on-claude-code` with the
 pack and project documents. The Codex installer remains Codex-only.
 
-## Use
+## Choose a starter pack
+
+Pick the pack that matches the work you want to deliver, then use its exact
+prompt in Codex. Each pack has a dedicated Project Manager & Orchestration Lead
+plus specialist and review roles.
+
+### SaaS MVP delivery
+
+For a web product moving from problem framing to a deployable MVP.
+
+```text
+Use $run-agent-team-on-codex to bind packs/saas-mvp-delivery to this project
+and execute it using the project documents.
+```
+
+### Marketing website launch
+
+For landing pages, company sites, campaigns, and content-driven launches.
+
+```text
+Use $run-agent-team-on-codex to bind packs/marketing-website-launch to this
+project and execute it using the project documents.
+```
+
+### Data and ML product
+
+For analytics pipelines, predictive services, evaluations, and model-backed
+features.
+
+```text
+Use $run-agent-team-on-codex to bind packs/data-ml-product to this project and
+execute it using the project documents.
+```
+
+### Mobile application release
+
+For iOS, Android, or cross-platform apps through a store-ready release.
+
+```text
+Use $run-agent-team-on-codex to bind packs/mobile-application-release to this
+project and execute it using the project documents.
+```
+
+### Research and decision report
+
+For evidence reviews, market studies, technical evaluations, and executive
+recommendations.
+
+```text
+Use $run-agent-team-on-codex to bind packs/research-decision-report to this
+project and execute it using the project documents.
+```
+
+See the [starter-pack catalog](docs/pack-catalog.md) for variants, roles, and
+applicability boundaries.
+
+## Create a custom pack
 
 ### 1. Build a universal pack
 
@@ -123,6 +201,18 @@ and execution plan for approval before creating tasks or launching role agents.
 See [docs/operating-guide.md](docs/operating-guide.md) for the full operating
 flow and [docs/pack-catalog.md](docs/pack-catalog.md) for starter-pack ideas.
 
+## Roadmap
+
+See the full [roadmap](ROADMAP.md). Near-term priorities are to:
+
+- publish worked examples from real, sanitized projects;
+- add starter packs for additional project classes based on user demand;
+- improve installation checks and validation guidance;
+- document integrations with the task-management systems supported by Codex.
+
+Have a project that does not fit a current pack? Open an onboarding-feedback
+issue or start a GitHub Discussion with the project class and constraints.
+
 ## Repository layout
 
 ```text
@@ -139,6 +229,7 @@ orca-team/
 │   ├── research-decision-report/
 │   └── template/
 ├── docs/
+│   ├── first-project-example.md
 │   ├── operating-guide.md
 │   └── pack-catalog.md
 └── scripts/
@@ -157,7 +248,13 @@ orca-team/
 - External actions require explicit authorization.
 - Knowledge packs stay read-only during execution.
 
-## Contributing
+## Feedback and contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). By contributing, you agree that your
-contribution is licensed under this repository's MIT License.
+For first-use feedback, use the **Onboarding feedback** issue template or a
+GitHub Discussion. Please include your project type, the pack you tried, where
+you got stuck, and what outcome you expected; never include credentials or
+private project documents.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for proposed changes. By contributing,
+you agree that your contribution is licensed under this repository's MIT
+License.
