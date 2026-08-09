@@ -26,7 +26,14 @@ skill executes from an approved pack but treats that pack as read-only.
 
 ## Install
 
-Clone or download this repository, then run the installer from its root.
+Clone the repository and enter its root:
+
+```sh
+git clone https://github.com/benyaminshoham/orca-team.git
+cd orca-team
+```
+
+Or download this repository, then run the installer from its root.
 
 ### macOS or Linux
 
