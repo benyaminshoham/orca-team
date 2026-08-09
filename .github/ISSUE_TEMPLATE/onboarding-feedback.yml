@@ -1,0 +1,44 @@
+name: Onboarding feedback
+description: Share what happened when you tried Orca Team on a real project.
+title: "onboarding: "
+labels: ["onboarding-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying Orca Team. Please do not include credentials, private project documents, or other sensitive information.
+  - type: dropdown
+    id: pack
+    attributes:
+      label: Pack used
+      options:
+        - SaaS MVP delivery
+        - Marketing website launch
+        - Data and ML product
+        - Mobile application release
+        - Research and decision report
+        - Custom pack
+        - I did not reach pack selection
+    validations:
+      required: true
+  - type: textarea
+    id: project_type
+    attributes:
+      label: Project type and goal
+      description: Describe the project without private details.
+      placeholder: A small B2B web app; I wanted an approved plan for its first release.
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What happened?
+      description: Include the step where you got stuck or where expectations differed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_outcome
+    attributes:
+      label: Expected outcome
+    validations:
+      required: true
