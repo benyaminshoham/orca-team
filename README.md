@@ -1,5 +1,7 @@
 # Orca Team
 
+![Robotic orcas leaping above an ocean, with abstract AI infrastructure in the background](assets/orca-ai-hero-v3.png)
+
 Orca Team packages a practical workflow for designing portable agent teams and
 binding them to concrete projects in Codex. It includes two installable skills, a
 runtime-neutral knowledge-pack template, starter-pack proposals, and simple
