@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Agent Team"
+  short_description: "Design portable multi-agent knowledge packs"
+  default_prompt: "Use $build-agent-team to interview me and create a universal knowledge pack for this class of projects."

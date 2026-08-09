@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Agent Team on Codex"
+  short_description: "Bind universal teams to Codex projects"
+  default_prompt: "Use $run-agent-team-on-codex to bind this knowledge pack to my project documents and execute the approved plan."
