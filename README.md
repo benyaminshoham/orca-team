@@ -35,6 +35,18 @@ Only after approval do role agents start, each in a visible task and an
 isolated Git worktree. See the full walkthrough in the
 [first-project example](docs/first-project-example.md).
 
+### A real run: Pac-Orca
+
+Here's `build-agent-team` and `run-agent-team-on-claude-code` end to end on a
+real project — an ocean-themed Pac-Man clone, built from a one-line brief
+through an approved plan, a parallel multi-role build, and a QA pass, to a
+deployed game:
+
+![Claude Desktop session showing Orca Team planning, approving, and building the Pac-Orca game](assets/orca-team-demo.gif)
+
+Play the result at [pac-orca](https://benyaminshoham.github.io/pac-orca/) or
+browse the [source](https://github.com/benyaminshoham/pac-orca).
+
 ## Why Orca Team instead of a single agent, or a framework
 
 - **Instead of one do-everything agent** — work is split across roles with
