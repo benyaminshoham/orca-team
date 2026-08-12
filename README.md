@@ -1,6 +1,6 @@
 # Orca Team
 
-![Robotic orcas leaping above an ocean, with abstract AI infrastructure in the background](assets/orca-ai-hero-v3.png)
+![Robotic orcas leaping above an ocean, with abstract AI infrastructure in the background](assets/orca-ai-hero.jpg)
 
 Build and run reliable AI agent teams in Codex and Claude Code. Orca Team provides installable
 skills and reusable team packs for planning and delivering SaaS products,
@@ -9,6 +9,43 @@ marketing websites, data and ML products, mobile apps, and research reports.
 It is for teams that want agent work to stay reviewable: a human approves the
 plan, specialist roles have explicit authority, and work is coordinated through
 visible platform-native agent tasks and isolated Git worktrees.
+
+## What a run looks like
+
+You bind a pack to a project and get a plan back before anything runs:
+
+```text
+> Use $run-agent-team-on-codex to bind the SaaS MVP delivery pack from Orca Team
+  to this project and execute it using the project documents.
+
+Orca Team · run-agent-team-on-codex
+  Checking pack applicability ......... ok (saas-mvp-delivery fits this project)
+  Missing inputs ....................... target users, deployment constraints
+  Proposed roles ........................ PM & Orchestration Lead, Product & UX Lead,
+                                           Full-Stack Engineer, Platform/Security Engineer,
+                                           QA & Release Reviewer
+
+  Proposed project brief + task graph ready for review.
+  No agent will be launched and no external action will be taken until you approve it.
+
+  Approve this plan? [y/N]
+```
+
+Only after approval do role agents start, each in a visible task and an
+isolated Git worktree. See the full walkthrough in the
+[first-project example](docs/first-project-example.md).
+
+## Why Orca Team instead of a single agent, or a framework
+
+- **Instead of one do-everything agent** — work is split across roles with
+  named authority (who owns product decisions, who owns deploys), coordinated
+  by a dedicated PM rather than left implicit.
+- **Instead of a new orchestration runtime** — Orca Team is Markdown-only. It
+  runs inside Codex or Claude Code using their own agent tasks and Git
+  worktrees; there is no server, queue, or SDK to adopt.
+- **Instead of always-on autonomous agents** — nothing launches, and no
+  external action is taken, until a human approves the specific project brief
+  and task plan. The pack itself stays read-only during execution.
 
 ## Try it in 30 seconds
 
@@ -109,8 +146,8 @@ pack and project documents. The Codex installer remains Codex-only.
 ## Choose a starter pack
 
 Pick the pack that matches the work you want to deliver, then use its exact
-prompt in Codex. Each pack has a dedicated Project Manager & Orchestration Lead
-plus specialist and review roles.
+prompt in Codex or Claude Code. Each pack has a dedicated Project Manager &
+Orchestration Lead plus specialist and review roles.
 
 ### SaaS MVP delivery
 
@@ -120,6 +157,16 @@ For a web product moving from problem framing to a deployable MVP.
 Use $run-agent-team-on-codex to bind packs/saas-mvp-delivery to this project
 and execute it using the project documents.
 ```
+
+In Claude Code, use the equivalent runner skill instead:
+
+```text
+Use $run-agent-team-on-claude-code to bind packs/saas-mvp-delivery to this
+project and execute it using the project documents.
+```
+
+Every pack below works the same way in Claude Code: swap
+`$run-agent-team-on-codex` for `$run-agent-team-on-claude-code`.
 
 ### Marketing website launch
 
